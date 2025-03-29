@@ -142,3 +142,75 @@ for index, row in archetype_summary.iterrows():
    print(f"\n🔹 {row['Archetype']} ({row['Player Count']} players):")
    for name in row["Players"]:
        print(f"   - {name}")
+
+# Miami Heat 2025 Contract Status Breakdown
+heat_fa_status = [
+    {
+        "Player": "Duncan Robinson",
+        "Pos": "SF",
+        "Age": 30.9,
+        "2024 Salary": 18000000,
+        "Status": "Player Option / $19.9M",
+        "Free Agent?": "❓ Potential FA",
+        "Explanation": "Becomes UFA only if he opts out of his $19.9M player option"
+    },
+    {
+        "Player": "Davion Mitchell",
+        "Pos": "PG",
+        "Age": 26.5,
+        "2024 Salary": 5237879,
+        "Status": "Restricted FA / Bird",
+        "Free Agent?": "✅ Confirmed FA (RFA)",
+        "Explanation": "Restricted free agent — Heat can match outside offers"
+    },
+    {
+        "Player": "Jaime Jaquez Jr.",
+        "Pos": "SF",
+        "Age": 24.1,
+        "2024 Salary": 4249285,
+        "Status": "Club Option / $3.9M",
+        "Free Agent?": "❓ Potential FA",
+        "Explanation": "Only becomes FA if Heat decline team option"
+    },
+    {
+        "Player": "Keshad Johnson",
+        "Pos": "PF",
+        "Age": 23.8,
+        "2024 Salary": 1340130,
+        "Status": "Club Option / $2.0M",
+        "Free Agent?": "❓ Potential FA",
+        "Explanation": "Only becomes FA if Heat decline team option"
+    },
+    {
+        "Player": "Isaiah Stevens",
+        "Pos": "PG",
+        "Age": 24.3,
+        "2024 Salary": 0,
+        "Status": "Two-Way RFA",
+        "Free Agent?": "✅ Confirmed FA (RFA)",
+        "Explanation": "Two-way contract expires; Heat can match offers"
+    },
+    {
+        "Player": "Josh Christopher",
+        "Pos": "SG",
+        "Age": 23.2,
+        "2024 Salary": 0,
+        "Status": "Two-Way RFA",
+        "Free Agent?": "✅ Confirmed FA (RFA)",
+        "Explanation": "Two-way contract expires; Heat can match offers"
+    },
+    {
+        "Player": "Dru Smith",
+        "Pos": "SG",
+        "Age": 27.2,
+        "2024 Salary": 0,
+        "Status": "Unclear",
+        "Free Agent?": "❓ Likely FA",
+        "Explanation": "Contract details unclear; likely expiring or two-way deal"
+    }
+]
+
+# Display in table format
+df = pd.DataFrame(heat_fa_status)
+print("\n📋 Miami Heat - 2025 Contract Status Overview\n")
+print(df[["Player", "Pos", "Age", "Status", "Free Agent?", "Explanation"]].to_string(index=False))
